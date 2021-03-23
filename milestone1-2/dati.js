@@ -101,41 +101,45 @@ var icone = [
 // Partendo dalla seguente struttura dati , mostriamo in pagina tutte le icone disponibili come da layout.
 
 icone.forEach((icona, i) => {
-	$("#icone1").append(`<i style="padding: 5px; font-size: 40px" class="${icona.family} ${icona.prefix}${icona.name}"></i>`)
+	$("#icone1").append(`<i style="padding: 5px; font-size: 30px" class="${icona.family} ${icona.prefix}${icona.name}"></i>`)
 });
 
 // Milestone 2
 // Coloriamo le icone per tipo.
 
-var iconeColorate = {}
+const colori = ["verde", "blu", "giallo"]
 
+var iconeColorate = icone.map((element, index, array) => {
 
+	if (element.type == "vegetable") {
 
-iconeColorate.forEach((icona, i) => {
-	$("#icone2").append(`<i style="padding: 5px; font-size: 40px" class="${icona.family} ${icona.prefix}${icona.name} ${icona.colore}"></i>`)
+		let obj = {
+			...element,
+			colore: colori[0]
+		}
+		return obj
+
+	} else if (element.type == "user"){
+
+		let obj = {
+			...element,
+			colore: colori[1]
+		}
+		return obj
+
+	} else {
+
+		let obj = {
+			...element,
+			colore: colori[2]
+
+		}
+		return obj
+
+	}
+
+})
+
+iconeColorate.forEach((element, i) => {
+	$("#icone2").append(`<i style="padding: 5px; font-size: 30px" class="${element.family} ${element.prefix}${element.name} ${element.colore}"></i>`)
 });
-
-// iconeColorate.forEach((elemento, i) => {
-//
-// 	if (elemento.type == "user") {
-// 		elemento.colore = "blu"
-// 	} else if (elemento.type == "vegetable") {
-// 		elemento.colore = "verde"
-// 	}
-//
-// });
-
-
-
-
-// var iconeColorate = icone.map((elemento, index, array) => {
-// 	let
-// })
-//
-// console.log(iconeColorate);
-//
-// if (elemento.type == user) {
-// 	elemento.colore = blu
-// } else if (elemento.type == vegetable) {
-// 	elemento.colore = verde
-// }
