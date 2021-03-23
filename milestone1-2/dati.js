@@ -107,15 +107,13 @@ icone.forEach((icona, i) => {
 // Milestone 2
 // Coloriamo le icone per tipo.
 
-const colori = ["verde", "blu", "giallo"]
-
 var iconeColorate = icone.map((element, index, array) => {
 
 	if (element.type == "vegetable") {
 
 		let obj = {
 			...element,
-			colore: colori[0]
+			colore: "verde"
 		}
 		return obj
 
@@ -123,7 +121,7 @@ var iconeColorate = icone.map((element, index, array) => {
 
 		let obj = {
 			...element,
-			colore: colori[1]
+			colore: "blu"
 		}
 		return obj
 
@@ -131,7 +129,7 @@ var iconeColorate = icone.map((element, index, array) => {
 
 		let obj = {
 			...element,
-			colore: colori[2]
+			colore: "arancione"
 
 		}
 		return obj
